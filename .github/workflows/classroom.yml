@@ -1,0 +1,62 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Test Case 1 [100]
+      id: test-case-1-100
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Test Case 1 [100]
+        setup-command: ''
+        command: python3 convert_C_to_F_01.py
+        input: '100'
+        expected-output: "Enter a temperature in Celsius: \n100.0 degrees Celsius
+          is 212.0 degrees Fahrenheit."
+        comparison-method: exact
+        timeout: 10
+        max-score: 10
+    - name: Test Case 2 [-40]
+      id: test-case-2-40
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Test Case 2 [-40]
+        setup-command: ''
+        command: python3 convert_C_to_F_01.py
+        input: "-40"
+        expected-output: "Enter a temperature in Celsius: \n-40.0 degrees Celsius
+          is -40.0 degrees Fahrenheit."
+        comparison-method: exact
+        timeout: 10
+        max-score: 10
+    - name: Test Case 3 [1]
+      id: test-case-3-1
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Test Case 3 [1]
+        setup-command: ''
+        command: python3 convert_C_to_F_01.py
+        input: '1'
+        expected-output: "Enter a temperature in Celsius: \n1.0 degrees Celsius is
+          33.8 degrees Fahrenheit."
+        comparison-method: exact
+        timeout: 10
+        max-score: 10
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        TEST-CASE-1-100_RESULTS: "${{steps.test-case-1-100.outputs.result}}"
+        TEST-CASE-2-40_RESULTS: "${{steps.test-case-2-40.outputs.result}}"
+        TEST-CASE-3-1_RESULTS: "${{steps.test-case-3-1.outputs.result}}"
+      with:
+        runners: test-case-1-100,test-case-2-40,test-case-3-1
