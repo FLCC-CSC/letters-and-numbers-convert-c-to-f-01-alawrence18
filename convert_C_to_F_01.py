@@ -19,7 +19,14 @@
     
 ########## ENTER YER CODE BELOW THIS LINE ##########
 
+def celsius_to_fahrenheit(celsius):
+    fahrenheit = (celsius * 9/5) + 32
+    return fahrenheit
 
+celsius = float(input("Enter temperature in Celsius: "))
+fahrenheit = celsius_to_fahrenheit(celsius)
+
+print(f"{celsius}°C is equal to {fahrenheit:.2f}°F.")
 
 
 
@@ -76,14 +83,14 @@ Enter a temperature in Celsius: 1
 
 1. What does `float` mean?
 
-
+float in python gives the progeam the ability to display decimal points. so a float is a decimal number.
 
 
 
 2. Why do you think it is important to use `float` as opposed to
    a different type of variable type?
 
-
+To allow the math to work correctly, if all the numbers were rounded up or down to whole number that will cause large errors in the calculations.
 
 
 
