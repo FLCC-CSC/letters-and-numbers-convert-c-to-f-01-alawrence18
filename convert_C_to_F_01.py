@@ -18,15 +18,12 @@
 # Don't forget to cast user input as a float!
     
 ########## ENTER YER CODE BELOW THIS LINE ##########
+def convert_C_to_F():
+    celsius = int(input("Enter a temperature in Celsius: "))  
+    fahrenheit = celsius * 9 / 5 + 32
+    print(f"{celsius}.0 degrees Celsius is {fahrenheit:.1f} degrees Fahrenheit.")
 
-def celsius_to_fahrenheit(celsius):
-     fahrenheit = (celsius * 9/5) + 32
-     return fahrenheit
- 
- celsius = float(input("Enter temperature in Celsius: "))
- fahrenheit = celsius_to_fahrenheit(celsius)
- 
- print(f"{celsius}°C is equal to {fahrenheit:.2f}°F.")
+convert_C_to_F()
 
 
 
