@@ -20,9 +20,9 @@
 ########## ENTER YER CODE BELOW THIS LINE ##########
 
 def convert_C_to_F():
-    celsius = float(input("Enter a temperature in Celsius: "))
-    fahrenheit = celsius * 9/5 + 32
-    print(f"\n{celsius:.1f} degrees Celsius is {fahrenheit:.1f} degrees Fahrenheit.")
+    celsius = int(input("Enter a temperature in Celsius: "))
+    fahrenheit = celsius * 9 / 5 + 32
+    print(f"{celsius}.0 degrees Celsius is {fahrenheit:.1f} degrees Fahrenheit.")
 
 convert_C_to_F()
 
