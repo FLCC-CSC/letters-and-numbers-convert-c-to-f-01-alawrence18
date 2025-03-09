@@ -19,29 +19,12 @@
     
 ########## ENTER YER CODE BELOW THIS LINE ##########
 
-# Akel Lawrence
-# Date: March 9, 2025
-# This program converts temperatures between Celsius and Fahrenheit based on user input.
+def convert_C_to_F():
+    celsius = float(input("Enter a temperature in Celsius: "))
+    fahrenheit = celsius * 9/5 + 32
+    print(f"\n{celsius:.1f} degrees Celsius is {fahrenheit:.1f} degrees Fahrenheit.")
 
-print("\n===== Temperature Converter =====\n")
-print("  1. Convert from Celsius to Fahrenheit")
-print("  2. Convert from Fahrenheit to Celsius")
-
-choice = input("\nPlease choose from the above menu: ")
-
-if choice == '1':
-    temp = float(input("\nEnter a temperature to convert: "))
-    converted = temp * 9 / 5 + 32
-    print(f"\n{temp:.1f} degrees Celsius is {converted:.1f} degrees Fahrenheit.\n")
-
-elif choice == '2':
-    temp = float(input("\nEnter a temperature to convert: "))
-    converted = (temp - 32) * 5 / 9
-    print(f"\n{temp:.1f} degrees Fahrenheit is {converted:.1f} degrees Celsius.\n")
-
-else:
-    print("\nInvalid choice. Please enter 1 or 2.")
-
+convert_C_to_F()
 
 
 
