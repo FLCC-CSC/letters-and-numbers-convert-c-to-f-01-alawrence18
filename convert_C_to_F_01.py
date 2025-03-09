@@ -18,10 +18,11 @@
 # Don't forget to cast user input as a float!
     
 ########## ENTER YER CODE BELOW THIS LINE ##########
+
 def convert_C_to_F():
-    celsius = int(input("Enter a temperature in Celsius: "))  
+    celsius = float(input("Enter a temperature in Celsius: "))  
     fahrenheit = celsius * 9 / 5 + 32
-    print(f"{celsius}.0 degrees Celsius is {fahrenheit:.1f} degrees Fahrenheit.")
+    print(str(celsius) + " degrees Celsius is " + str(round(fahrenheit, 1)) + " degrees Fahrenheit.")
 
 convert_C_to_F()
 
